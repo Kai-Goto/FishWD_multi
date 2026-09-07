@@ -287,7 +287,7 @@ int temp_num1m = 0;
 // Graph design parameter ****************************************************************************************
 final int line_graph_w = 360;      // Width of pulse wave graph [dot = display sample num]
 final int wideline_graph_w = 180;  // Width of the magnified pulse wave graph[dot = display sample num]
-final int wideline_graph_h = 180;  // Height of the magnified pulse wave graph
+final int wideline_graph_h = 60;  // Height of the magnified pulse wave graph
 final int data_graph_w = 360;      // Width of data graph [dot]
 final int data_graph_h = 180;      // Height of data graph [dot]
 final int vallabel_w = 40;         // Width of the numerical display for the y-axis auxiliary line[dot]
