@@ -1,0 +1,13 @@
+# 実行環境やビルド結果のフォルダを除外
+application.windows64/
+application.windows32/
+windows-amd64/
+cai/
+data/
+ID/
+
+
+# その他一般的な不要ファイル
+*.dll
+*.jar
+*.class
