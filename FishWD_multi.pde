@@ -287,7 +287,7 @@ int temp_num1m = 0;
 // Graph design parameter ****************************************************************************************
 final int line_graph_w = 360;      // Width of pulse wave graph [dot = display sample num]
 final int wideline_graph_w = 180;  // Width of the magnified pulse wave graph[dot = display sample num]
-final int wideline_graph_h = 60;  // Height of the magnified pulse wave graph
+final int wideline_graph_h = 180;  // Height of the magnified pulse wave graph
 final int data_graph_w = 360;      // Width of data graph [dot]
 final int data_graph_h = 180;      // Height of data graph [dot]
 final int vallabel_w = 40;         // Width of the numerical display for the y-axis auxiliary line[dot]
@@ -297,12 +297,12 @@ final int valmargin_h = 10;        // Top and bottom margins of the graph area[d
 final int label_w = 700;           // Position of the average value display label[dot]
 final int label_h = 30;            // Position of the average value display label[dot]
 
-final float wide_rate = 1.0;
+final float wide_rate = 3.0;
 
 // Height of pulse wave graph [dot]
 final int line_graph_h = data_graph_h*2 + valmargin_h - vallabel_h;
-final int graph_widedata_max = int(wideline_graph_h/2/wide_rate);
-final int graph_widedata_min = int(-wideline_graph_h/2/wide_rate);
+final int graph_widedata_max = wideline_graph_h/2;
+final int graph_widedata_min = -wideline_graph_h/2;
 // Width of Screen size[dot]
 final int screen_w = wideline_graph_w+line_graph_w + data_graph_w + vallabel_w*3 + valmargin_w*2 + 200;
 // Height of Screen size[dot]
@@ -1454,6 +1454,7 @@ void draw(){
     for ( int j = 0; j < wideline_graph_w-1; j++ ) {
       l = (l < wideline_graph_w-1)? l+1: 0;
       wideline1_yy= int(widegraph_data[0][l])-center1_y;
+      wideline1_yy= int(wideline1_yy * wide_rate);
       if( wideline1_yy>graph_widedata_max ){
         wideline1_yy=graph_widedata_max;
       } else if ( wideline1_yy<graph_widedata_min ){
@@ -1473,6 +1474,7 @@ void draw(){
     for ( int j = 0; j < wideline_graph_w-1; j++ ) {
       m = (m < wideline_graph_w-1)? m+1: 0;
       wideline2_yy= int(widegraph_data[1][m])-center2_y;
+      wideline2_yy= int(wideline2_yy * wide_rate);
       if( wideline2_yy>graph_widedata_max ){
         wideline2_yy=graph_widedata_max;
       } else if ( wideline2_yy<graph_widedata_min ){
