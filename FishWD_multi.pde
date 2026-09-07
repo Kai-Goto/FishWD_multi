@@ -816,9 +816,9 @@ void draw(){
         y3[i] = y3[i+1];  
       }
 
-      y1[y1.length - 1] = file_Dfill2[1];    // HR by IR BPF
+      y1[y1.length - 1] = file_Dfill2[0];    // HR by Red BPF
       y2[y2.length - 1] = file_Dfill3[2];    // HR by a_sum BPF
-      y3[y3.length - 1] = file_Dfill1[1];    // BR by IR BPF
+      y3[y3.length - 1] = file_Dfill1[0];    // BR by Red BPF
 
       ftdma = 0.0;
       ima = 0;
